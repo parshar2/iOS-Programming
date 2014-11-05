@@ -105,6 +105,10 @@ var tigerNames:Array<String> = []
 
 var tigeressNames:[String] = []
 
+var emptyArray = [String]()
+var emptyDictionary = [String : Float]()
+
+
 var tigresNames = ["Tigger","Tigress","Jacob","Spar"]
 var tigerAges = [1,2,3,4]
 
@@ -128,6 +132,8 @@ for names in tigresNames {
 for tigerNumber in 1...3 {
     println(tigerNumber)
 }
+
+
 
 var nums = 1...5
 
@@ -185,6 +191,133 @@ func printHelloWorld() {
 }
 
 printHelloWorld()
+
+func printNumberSupplied(number : Int) {
+    println("The number is \(number)")
+    println("The number times 3 is : \(number * 3)")
+}
+
+printNumberSupplied(10)
+printNumberSupplied(3)
+
+func turnOffAppliance( applianceName : String , isOn : Bool) {
+    if isOn {
+        println("Please turn off \(applianceName)")
+    }
+    else {
+        println("I actually turned off the \(applianceName) already")
+    }
+    
+}
+
+turnOffAppliance("Fridge", true)
+
+
+// Functions that return a value
+func additionFunction(firstArgument : Int, secondArgument : Int) -> Int {
+    return firstArgument + secondArgument
+}
+
+
+additionFunction(2, 3)
+
+
+/************** Optionals ****************/
+
+//“You can use if and let together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contains nil to indicate that the value is missing. Write a question mark (?) after the type of a value to mark the value as optional.
+
+var optionalString : String? = "5"
+
+optionalString == nil
+
+var optionalName : String? = "Parikshit"
+var greeting = "Hello!"
+
+if let name = optionalName {
+    greeting = "Hello, \(name)"
+}
+
+
+// Passing a variable number of arguments
+func average (numbers : Int...) -> Double {
+    var sum : Int = 0
+    var count : Int = 0
+    
+    for number in numbers {
+        sum += number
+        count++
+    }
+    
+    let average:Double = Double(sum) / Double(count)
+    return average
+}
+
+
+
+average(12,43,53,21,43,64)
+
+
+// Passing functions as arguments
+func isSumFive (num1 : Int, num2 : Int, checkSum : (Int, Int) -> Bool) -> Bool {
+    return checkSum(num1, num2)
+}
+
+func checkSum (num1 : Int, num2 : Int) -> Bool {
+    let sum = num1 + num2
+    return sum == Int(5)
+}
+
+isSumFive(3, 2, checkSum)
+
+
+
+var parikshit , sharma : Int
+
+parikshit = 5
+sharma = 10
+
+let Dog = "smiley"
+
+
+println("Hello! Wake up")
+
+let myTuple = (1,"Parikshit",3.0)
+println(myTuple.0)
+println(myTuple.1)
+
+let myNamedTuple = (SNo : 1, Name : "Parikshit", marks : 3.0)
+println(myNamedTuple.SNo)
+
+
+
+
+var numTimes = 10
+var data = [1...10]
+
+for i in data {
+    println(i)
+}
+
+
+
+/***************** Switch statement *****************/
+
+x = 4
+
+switch x {
+case 1 :
+    println("The value of x is 1")
+case 2:
+    println("The values of x is 2")
+case 3,4:
+    println("The values of x is 3 or 4")
+default:
+    println("Default value printed")
+}
+
+
+
+
 
 
 
